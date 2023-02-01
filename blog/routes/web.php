@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
@@ -130,9 +131,25 @@ use Illuminate\Support\Facades\Route;
 //     );
 // });
 
-Route::get("/", function () {
-    return view("home")->with("number", rand(1, 9999));
-});
+// Route::get("/", function () {
+//     return view("home")->with("number", rand(1, 9999));
+// });
+
+// Route::get("/dashboard", [dashboardController::class, "index"]);
+// Route::get("/", 'App\Http\Controllers\dashboardController@index');
+
+
+// Route::get("/dashboard", "App\Http\Controllers\DashboardController@index");
+// Route::get("/dashboard/create", "App\Http\Controllers\DashboardController@create");
+// Route::post("/dashboard", "App\Http\Controllers\DashboardController@store");
+// Route::get("/dashboard/show/{id}", "App\Http\Controllers\DashboardController@show");
+// Route::get("/dashboard/edit/{id}", "App\Http\Controllers\DashboardController@edit");
+// Route::put("/dashboard/update/{id}", "App\Http\Controllers\DashboardController@update");
+// Route::delete("/dashboard/destroy/{id}", "App\Http\Controllers\DashboardController@destroy");
+
+# above codes is equal to below code :))))
+
+Route::resource("/dashboard", "App\Http\Controllers\DashboardController");
 
 
 Route::fallback(function () {
