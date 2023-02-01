@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,122 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get("/users", function () {
+//     return json_encode(
+//         [
+//             [
+//                 "id" => 1,
+//                 "name" => "ali"
+//             ],
+//             [
+//                 "id" => 2,
+//                 "name" => "ahmad"
+//             ]
+//         ]
+//     );
+// });
+
+// Route::get("/users/{id}", "UsersController@show")->name("users.show");
+
+// Route::get("/", function () {
+//     return view("welcome");
+// });
+
+// Route::get("/user/{id}", function (int $id) {
+//     return $id;
+// })->name("testname");
+
+
+// Route::match(["get", "post"], "/", function () {
+//     return json_encode(["key" => "value"]);
+// });
+
+// Route::any("/users/{id}", function ($id) {
+//     return json_encode(["id" => $id]);
+// });
+
+
+// Route::any("/users/{id}", function (int $id) {
+//     return json_encode(["message" => "your id is $id"]);
+// })->where("id", "[1-9]");
+
+
+// Route::middleware("auth")->group(function () {
+//     Route::get(
+//         "users",
+//         function () {
+//             return "hello from users function";
+//         }
+//     );
+
+//     Route::get(
+//         "admin",
+//         function () {
+//             return "hello from admin function";
+//         }
+//     );
+// });
+// Route::group([], function () {
+//     Route::get(
+//         "users",
+//         function () {
+//             return "hello from users function";
+//         }
+//     );
+
+//     Route::get(
+//         "admin",
+//         function () {
+//             return "hello from admin function";
+//         }
+//     );
+// });
+
+
+
+// grouping routes with prefix
+
+// Route::prefix("dashboard")->group(function () {
+//     Route::get("/", function () {
+//         return "<h1>main dashboard</h1>";
+//     });
+
+//     Route::get(
+//         "edit",
+//         function () {
+//             return "<h1>there is edit page from dashboard</h1>";
+//         }
+//     );
+// });
+
+
+// in another form
+
+// Route::group(["prefix" => "dashboard"], function () {
+//     Route::get(
+//         "/",
+//         function () {
+//             return "<h1>main dashboard</h1>";
+//         }
+//     );
+
+//     Route::get(
+//         "edit",
+//         function () {
+//             return "<h1>there is edit page from dashboard</h1>";
+//         }
+//     );
+// });
+
+Route::get("/", function () {
+    return view("home")->with("number", rand(1, 9999));
+});
+
+
+Route::fallback(function () {
+    return view("_404");
 });
