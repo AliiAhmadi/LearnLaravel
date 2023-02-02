@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashBoardController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class DashBoardController extends Controller
      */
     public function index()
     {
-        // index
+        //
+        return "FROM index in dahsboardController";
     }
 
     /**
@@ -23,7 +24,8 @@ class DashBoardController extends Controller
      */
     public function create()
     {
-        // create
+        //
+        return view("home");
     }
 
     /**
@@ -35,6 +37,9 @@ class DashBoardController extends Controller
     public function store(Request $request)
     {
         //
+        // return "<h1>POSTED</h1>";
+        // return redirect()->away("https://github.com");
+        abort(401);
     }
 
     /**
@@ -46,6 +51,7 @@ class DashBoardController extends Controller
     public function show($id)
     {
         //
+        return "hello from show";
     }
 
     /**

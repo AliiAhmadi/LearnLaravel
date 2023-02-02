@@ -1,6 +1,7 @@
 <?php
 
 
+
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
@@ -149,9 +150,41 @@ use Illuminate\Support\Facades\Route;
 
 # above codes is equal to below code :))))
 
-Route::resource("/dashboard", "App\Http\Controllers\DashboardController");
+// Route::resource("/dashboard", "App\Http\Controllers\DashboardController");
 
 
-Route::fallback(function () {
-    return view("_404");
+// Route::fallback(function () {
+//     return view("_404");
+// });
+
+// Route::get("dashboard/{id}", "App\Http\Controllers\showDashboard");
+
+// Route::get("dashboard", "App\Http\Controllers\showDashboard");
+
+
+Route::resource("dashboard", "App\Http\Controllers\DashboardController");
+
+
+// Route::get("redirect-me", function () {
+//     return redirect()->to("dashboard/create");
+// });
+
+
+// Route::get("redirect-short", function () {
+//     return redirect("dashboard");
+// });
+
+
+// Route::get("dashboardo", function () {
+//     return Redirect::route("dashboard.show",[1]);
+// });
+
+
+// Route::get("redirect", function () {
+//     return redirect()->back();
+// });
+
+
+Route::get("redirect", function () {
+    return redirect("dashboard/create")->with("status", true);
 });
