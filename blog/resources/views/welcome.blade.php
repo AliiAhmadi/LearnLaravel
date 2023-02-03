@@ -17,10 +17,15 @@
 <body class="antialiased">
     <!-- <a href="">get users json</a> -->
 
-    <a href="<?php echo route("get.test.user", ["id" => 5]); ?>">click here</a>
+
+    <!-- <a href="<?php
+    //echo route("get.test.user", ["id" => 5]);?>">click here</a>
     <br><br><br>
 
-    <a href="<?php echo route("start"); ?>">back</a>
+    <a href="<?php
+    //echo route("start");?>">back</a> -->
+    <a href="<?php echo route("admin.users"); ?>">Go To Page</a>
+
 </body>
 
 </html>

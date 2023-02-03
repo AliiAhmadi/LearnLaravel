@@ -195,10 +195,33 @@ use Illuminate\Support\Facades\Route;
 // })->where("username", "[a-zA-Z]+");
 
 
-Route::get("start", function () {
-    return view("welcome");
-})->name("start");
+// Route::get("start", function () {
+//     return view("welcome");
+// })->name("start");
 
-Route::get("/get/test/user/{id}", function ($id) {
-    return $id;
-})->name("get.test.user");
+// Route::get("/get/test/user/{id}", function ($id) {
+//     return $id;
+// })->name("get.test.user");
+
+// Route::group([""], function () {
+//     Route::get("/", function () {
+//     });
+// });
+
+// Route::prefix('admin')->group(function () {
+//     Route::get('users/{id}', function (int $id) {
+//         // Matches The "/admin/users" URL
+
+//         return "here admin/users";
+//     })->where("id", "[0-9]{5}");
+// });
+
+Route::name("admin.")->group(function () {
+    Route::get("users", function () {
+        return "hello";
+    })->name("users");
+});
+
+Route::get("/", function () {
+    return view("welcome");
+});
