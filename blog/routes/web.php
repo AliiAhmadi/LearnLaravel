@@ -162,7 +162,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get("dashboard", "App\Http\Controllers\showDashboard");
 
 
-Route::resource("dashboard", "App\Http\Controllers\DashboardController");
+// Route::resource("dashboard", "App\Http\Controllers\DashboardController");
 
 
 // Route::get("redirect-me", function () {
@@ -185,6 +185,20 @@ Route::resource("dashboard", "App\Http\Controllers\DashboardController");
 // });
 
 
-Route::get("redirect", function () {
-    return redirect("dashboard/create")->with("status", true);
-});
+// Route::get("redirect", function () {
+//     return redirect("dashboard/create")->with("status", true);
+// });
+
+
+// Route::get("/{username}", function ($username) {
+//     return $username;
+// })->where("username", "[a-zA-Z]+");
+
+
+Route::get("start", function () {
+    return view("welcome");
+})->name("start");
+
+Route::get("/get/test/user/{id}", function ($id) {
+    return $id;
+})->name("get.test.user");
