@@ -216,12 +216,17 @@ use Illuminate\Support\Facades\Route;
 //     })->where("id", "[0-9]{5}");
 // });
 
-Route::name("admin.")->group(function () {
-    Route::get("users", function () {
-        return "hello";
-    })->name("users");
-});
+// Route::name("admin.")->group(function () {
+//     Route::get("users", function () {
+//         return "hello";
+//     })->name("users");
+// });
 
-Route::get("/", function () {
-    return view("welcome");
-});
+// Route::get("/", function () {
+//     return view("welcome");
+// });
+
+
+// $router->get("/", function () {
+//     return "home page";
+// });
