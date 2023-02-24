@@ -230,3 +230,14 @@ use Illuminate\Support\Facades\Route;
 // $router->get("/", function () {
 //     return "home page";
 // });
+
+// Route::apiResource("/post", "App\Http\Controllers\PostController");
+
+
+// Route::redirect("/redirect", "post");
+
+
+Route::get("/post", "App\Http\Controllers\PostController@index")->name("post.index");
+
+
+Route::get("/file", "App\Http\Controllers\PostController@create")->name("file.create");

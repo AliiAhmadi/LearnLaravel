@@ -10,22 +10,12 @@
 
 <body>
 
-    <form action="{{ route('dashboard.store') }}" method="post">
-        {{ csrf_field() }}
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-                name="email">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary">submit</button>
-        </div>
-    </form>
+    <form action="{{ route('file.create') }}" method="get">
 
+        <button type="submit" class="btn btn-primary">get pdf</button>
+
+
+    </form>
 </body>
 
 </html>
