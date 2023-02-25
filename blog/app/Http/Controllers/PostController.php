@@ -34,9 +34,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json([
-            "response" => "store"
-        ]);
     }
 
     /**
@@ -47,9 +44,6 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return response()->json([
-            "response" => "show"
-        ]);
     }
 
     /**
@@ -60,9 +54,6 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        return response()->json([
-            "response" => "edit"
-        ]);
     }
 
     /**
@@ -74,9 +65,6 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return response()->json([
-            "response" => "update"
-        ]);
     }
 
     /**
@@ -87,8 +75,5 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        return response()->json([
-            "response" => "destroy"
-        ]);
     }
 }

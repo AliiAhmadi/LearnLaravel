@@ -9,13 +9,17 @@
 </head>
 
 <body>
+    {{-- <p>this is for test</p>
 
     <form action="{{ route('file.create') }}" method="get">
 
         <button type="submit" class="btn btn-primary">get pdf</button>
 
 
-    </form>
+    </form> --}}
+
+    @include('error-none')
+
 </body>
 
 </html>
