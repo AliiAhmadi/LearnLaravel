@@ -24,7 +24,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // boot after application this method will be executed
-
-
     }
 }
