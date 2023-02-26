@@ -241,3 +241,10 @@ Route::get("/post", "App\Http\Controllers\PostController@index")->name("post.ind
 
 
 Route::get("/file", "App\Http\Controllers\PostController@create")->name("file.create");
+
+
+Route::get("/", function () {
+    return response()->json([
+        "message" => "OK"
+    ]);
+});
