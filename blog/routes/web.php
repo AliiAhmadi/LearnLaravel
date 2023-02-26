@@ -4,6 +4,7 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -243,8 +244,16 @@ Route::get("/post", "App\Http\Controllers\PostController@index")->name("post.ind
 Route::get("/file", "App\Http\Controllers\PostController@create")->name("file.create");
 
 
-Route::get("/", function () {
-    return response()->json([
-        "message" => "OK"
-    ]);
-});
+// Route::get("/", function () {
+//     return response()->json([
+//         "message" => "OK"
+//     ]);
+// });
+
+
+// Route::get("/", function () {
+//     return response()->json(App::environment());
+// });
+
+
+Route::get("/", "App\Http\Controllers\PostController@index");

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -13,7 +14,31 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view("home");
+        // $result = DB::table('posts')->where("created_at", now())->get();
+
+        // // return response()->json($result);
+
+        // $email = DB::table("users")->where("name", "john")->value("email");
+
+        // $name = DB::table("posts")->where("title", "how create laravel blog")->value("name");
+
+        // $userWithId3 = DB::table("users")->find(3);
+
+        // $postId100 = DB::table("posts")->find(100);
+
+        // $usernames = DB::table("users")->pluck("username");
+
+        // foreach ($usernames as $username) {
+        //     echo $username;
+        // }
+
+        // $usernames = DB::table("users")->pluck("username", "name");
+
+        // foreach ($usernames as $name => $username) {
+        //     echo $name . " " . $username;
+        // }
+
+
     }
 
     /**
@@ -23,7 +48,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return response()->file("theory-of-languages.pdf", ["Content-Type" => "pdf"]);
+        // return response()->file("theory-of-languages.pdf", ["Content-Type" => "pdf"]);
     }
 
     /**
