@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -12,7 +14,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($username)
     {
         // $result = DB::table('posts')->where("created_at", now())->get();
 
@@ -66,8 +68,45 @@ class PostController extends Controller
         // can you tell me something for create a new website
         // i want to help you in this case you shold create you own wordpress application
 
-        $users = DB::table("posts")->select("content", "author as writer")->get();
-        dd($users);
+        // $users = DB::table("posts")->select("content", "author as writer")->get();
+        // dd($users);
+
+        // $user = DB::table("posts")->where("author", $username)->get();
+        // $user = Post::where("content", "content1")->get();
+
+        // $user->fresh();
+
+        // dd($user);
+
+        // $users = Post::where("created_at", "<", now())->cursor();
+
+        // dd($users);
+
+        // Post::create([
+        //     "title" => "title1",
+        //     "content" => "content1"
+        // ]);
+
+        // Post::make([
+        //     "content" => "this is content"
+        // ])->save();
+
+        // $resultOfCreate = Post::create([
+        //     "description" => Str::random(20),
+        //     "content" => Str::random(100),
+        //     "author" => Str::random(10)
+        // ]);
+        // dd($resultOfCreate);
+
+        // Post::destroy([1, 2, 3, 4, 5, 6, 7]);
+
+        // Post::where("user_id", 100)->delete();
+
+        // Post::where("id", 1)->delete(); recent
+
+        $posts = Post::all();
+
+        dd($posts);
     }
 
     /**
@@ -79,16 +118,16 @@ class PostController extends Controller
     {
         // return response()->file("theory-of-languages.pdf", ["Content-Type" => "pdf"]);
 
-        DB::transaction(function () {
-            DB::table("posts")->where("id", 100)->delete();
+        // DB::transaction(function () {
+        //     DB::table("posts")->where("id", 100)->delete();
 
-            DB::table("posts")->insert([
-                "name" => "ali",
-                "family" => "ahmadi",
-                "country" => "iran",
-                "zip" => 100
-            ]);
-        });
+        //     DB::table("posts")->insert([
+        //         "name" => "ali",
+        //         "family" => "ahmadi",
+        //         "country" => "iran",
+        //         "zip" => 100
+        //     ]);
+        // });
     }
 
     /**
