@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -104,80 +103,23 @@ class PostController extends Controller
 
         // Post::where("id", 1)->delete(); recent
 
-        $posts = Post::all();
+        // $posts = Post::all(); just not deleted rows
 
-        dd($posts);
-    }
+        // $posts = Post::withTrashed()->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // return response()->file("theory-of-languages.pdf", ["Content-Type" => "pdf"]);
+        // $posts = Post::onlyTrashed()->get();
 
-        // DB::transaction(function () {
-        //     DB::table("posts")->where("id", 100)->delete();
+        // dd($posts);
 
-        //     DB::table("posts")->insert([
-        //         "name" => "ali",
-        //         "family" => "ahmadi",
-        //         "country" => "iran",
-        //         "zip" => 100
-        //     ]);
-        // });
-    }
+        // Post::onlyTrashed()->restore();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-    }
+        // $posts = Post::all();
+        // dd($posts);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-    }
+        // $posts = Post::all();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-    }
+        // dd($posts[1]->title_content);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
+        $user = User::find(1);
     }
 }

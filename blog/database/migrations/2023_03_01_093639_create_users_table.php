@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string("username", 255)->unique();
+            $table->string("email", 255)->unique();
+            $table->string("password", 255);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('users');
     }
 };
