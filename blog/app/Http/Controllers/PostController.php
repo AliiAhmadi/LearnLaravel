@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -120,6 +121,9 @@ class PostController extends Controller
 
         // dd($posts[1]->title_content);
 
-        $user = User::find(1);
+        // $user = User::find(1);
+        $course = Course::find(1);
+
+        dd($course->comments);
     }
 }
