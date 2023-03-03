@@ -141,4 +141,31 @@ class PostController extends Controller
 
         $courses = Course::with("comments")->get();
     }
+
+    public function errors()
+    {
+        // dd("hello"); test is ok
+
+        // $messages = [
+        //     "errors" => ["ERROR IS HERE"],
+        //     "messages" => ["SOME MESSAGE"]
+        // ];
+
+        // $messageBage = new \Illuminate\Support\MessageBag($messages);
+
+        // if ($messageBage->has("errors")) {
+        //     // dd($messageBage->get("errors"));
+
+        //     return view("error")->withErrors($messageBage);
+        // }
+
+        ### with $errors we do not need to do all of this works myself. all of this works will be done themself with laravel
+
+
+
+        return view("error")->withErrors([
+            "firstError" => "error 1",
+            "secondError" => "error 2"
+        ]);
+    }
 }

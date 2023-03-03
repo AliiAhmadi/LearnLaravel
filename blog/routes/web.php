@@ -260,8 +260,10 @@ Route::get("/file", "App\Http\Controllers\PostController@create")->name("file.cr
 Route::get("/@{username}", "App\Http\Controllers\PostController@index");
 
 
-Route::get("/", function () {
-    return response()->json([
-        "message" => "OK"
-    ]);
-});
+// Route::get("/", function () {
+//     return response()->json([
+//         "message" => "OK"
+//     ]);
+// });
+
+Route::get("/", [\App\Http\Controllers\PostController::class, "errors"]);
