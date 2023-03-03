@@ -122,8 +122,23 @@ class PostController extends Controller
         // dd($posts[1]->title_content);
 
         // $user = User::find(1);
-        $course = Course::find(1);
+        // $course = Course::find(1);
 
-        dd($course->comments);
+        // dd($course->comments);
+
+
+        ##### lazy loading #####
+
+        $courses = Course::all();
+
+        $array = [];
+        foreach ($courses as $course) {
+            $array[] = $course->comments;
+        }
+
+
+        ##### eager loading #####
+
+        $courses = Course::with("comments")->get();
     }
 }
